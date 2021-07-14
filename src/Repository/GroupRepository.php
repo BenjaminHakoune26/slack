@@ -37,7 +37,7 @@ class GroupRepository extends ServiceEntityRepository
     }
     */
 
-
+    //Fonction permettant de recuperer les groupes
     public function findAllGroups()
     {
         return $this->createQueryBuilder('g')
@@ -46,6 +46,7 @@ class GroupRepository extends ServiceEntityRepository
         ;
     }
 
+    //Fonction permettant de trouver les groupes d'un utilisateur
     public function findGroupByMessage($idMember)
     {
         return $this->createQueryBuilder('g')

@@ -36,7 +36,7 @@ class MessageRepository extends ServiceEntityRepository
     }
     */
 
-
+    //Fonction permettant de recuperer tout les messages d'un groupe
     public function findAllMessagesByGroup($idGroup)
     {
         return $this->createQueryBuilder('m')
