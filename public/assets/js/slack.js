@@ -13,7 +13,7 @@ function listerGroup(url)
 
         for (let i=0; i<group.groups.length; i++){
             //bloc HTML d'un groupe
-            blockgroup += `<li class="person" data-chat="person2" onclick="showMessage(${group.groups[i].id}, '/messages/ajax/')">
+            blockgroup += `<li class="person" data-chat="person1" onclick="showMessage(${group.groups[i].id}, '/messages/ajax/')">
                                 <div class="user">
                                     <img src="/assets/img/507803.jpg" alt="Retail Admin">
                                 </div>
@@ -69,6 +69,11 @@ function showMessage(idGroup, url){
  */
 function ajoutMessage(message)
 {
+    //recuperer en post le contenu du champs de saisi via un post
+    message=null;
+    //l'envoyer en bdd
+
+    //refresh car nouv message
 }
 
 //AUTOREFRESH

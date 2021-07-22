@@ -58,4 +58,9 @@ class DiscussionsController extends AbstractController
         //Ce tableau est renvoyer sous format Json
         return new JsonResponse(['data' => $messageArray]);
     }
+
+    public function EcrireMessage($UnMessage)
+    {
+
+    }
 }

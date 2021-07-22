@@ -3,35 +3,36 @@
 {% block title %}Message index{% endblock %}
 
 {% block body %}
-    <h1>Message index</h1>
+    <div class="container-fluid">
+        <h1 style="text-align: center" class="my-5">Message index</h1>
 
-    <table class="table">
-        <thead>
+        <table class="table table-striped table-hover">
+            <thead>
             <tr>
                 <th>Id</th>
-                <th>Text</th>
-                <th>DateCreate</th>
+                <th>Texte</th>
+                <th>Date de création</th>
                 <th>actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for message in messages %}
-            <tr>
-                <td>{{ message.id }}</td>
-                <td>{{ message.text }}</td>
-                <td>{{ message.dateCreate ? message.dateCreate|date('Y-m-d') : '' }}</td>
-                <td>
-                    <a href="{{ path('message_show', {'id': message.id}) }}">show</a>
-                    <a href="{{ path('message_edit', {'id': message.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('message_new') }}">Create new</a>
+            </thead>
+            <tbody>
+            {% for message in messages %}
+                <tr>
+                    <td>{{ message.id }}</td>
+                    <td>{{ message.text }}</td>
+                    <td>{{ message.dateCreate ? message.dateCreate|date('Y-m-d') : '' }}</td>
+                    <td>
+                        <a href="{{ path('message_show', {'id': message.id}) }}">Voir</a> /
+                        <a href="{{ path('message_edit', {'id': message.id}) }}">modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">Aucun message trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ path('message_new') }}">Nouveau message</a>
+    </div>
 {% endblock %}
